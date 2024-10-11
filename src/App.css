@@ -1,0 +1,120 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #2a2d34;
+}
+.navbar {
+	background-color: #0b0c10 !important;
+	padding: 2rem 2rem;
+}
+.navbar-brand,
+.nav-link {
+	color: #e0e0e0;
+}
+.nav-link.active {
+	color: #65ffda;
+}
+.navbar-toggler-icon {
+	background-color: #e0e0e0;
+}
+.navbar-nav .nav-link {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.navbar-brand:hover {
+	color: #ff4500;
+}
+.navbar-brand {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+.navbar-toggler {
+	font-size: 1.25rem;
+	padding: 0.5rem;
+}
+.footer {
+	background-color: #0b0c10;
+	color: #6c757d;
+	padding: 2rem 1rem;
+	text-align: center;
+}
+.footer-content {
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+}
+.connect {
+	margin-top: 1rem;
+}
+.para-connect {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+.connect-links {
+	color: #6c757d;
+	font-size: 1.25rem;
+	text-decoration: none;
+}
+.connect-links:hover {
+	color: #ff4500;
+}
+.connect-links + .connect-links {
+	margin-left: 1rem;
+}
+.container {
+	display: flex;
+	align-items: flex-start;
+	gap: 5rem;
+}
+.async {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: xx-large;
+	color: #6c757d;
+}
+.async:hover {
+	color: #ff4500;
+}
+.myImg {
+	height: 35rem;
+	width: 25rem;
+	border: 2px solid #2a2d34;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-top: 5rem;
+	margin-left: 5rem;
+	box-shadow: 12px 12px 10px #0b0c10;
+}
+
+.text-content {
+	color: white;
+	flex: 1;
+	margin-right: 5rem;
+}
+
+/* .text-content p:hover {
+	background-color: #e0e0e0;
+	padding: 10px;
+	border-radius: 5px;
+	transform: translateY(-5px);
+} */
+.text-content p:hover {
+	padding: 20px;
+	/* background-color: #f8f9fa; */
+	background-color: #6c757d;
+	color: #fff;
+	font-weight: bold;
+	transition: transform 0.4s ease, background-color 0.4s ease, border 0.4s ease;
+}
+.text-content h1 {
+	transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+	/* text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), 0 0 30px; */
+	font-weight: bold;
+}
+.text-content h1:hover {
+	transform: scale(1.5);
+	text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+	color: lavender;
+}
