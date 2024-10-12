@@ -34,6 +34,13 @@ export default function Contact() {
 	const H3 = {
 		fontWeight: "bold",
 	};
+	const formLink = {
+		textDecoration: "none",
+		color: "black",
+		fontWeight: "bold",
+		fontSize: "larger",
+	};
+
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -145,6 +152,9 @@ export default function Contact() {
 						</a>
 					</h4>
 					<br />
+					<Link to="/form" style={formLink}>
+						Please fill out this form.
+					</Link>
 					<br />
 				</div>
 			</div>
