@@ -1,46 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Contact() {
+export default function Submit() {
 	const Box = {
-		height: "45rem",
-		width: "40rem",
+		paddingLeft: "2rem",
+		"box-sizing": "border-box",
+		"background-color": "#adb5bd",
+		height: "25rem",
+		width: "30rem",
+		display: "flex",
+		"flex-direction": "column",
+		"justify-content": "center",
+		"align-items": "center",
 		border: "2px solid black",
-		backgroundColor: "#adb5bd",
-		marginTop: "5rem",
-		marginBottom: "5rem",
-		marginLeft: "30rem",
-		marginRight: "15rem",
+		"border-radius": "10%",
+		// border: "radius top 20%",
+		"margin-bottom": "10rem",
+		"margin-top": "2rem",
 		boxShadow: "10px 10px #0b0c10",
-		borderRadius: "10%",
+		"margin-left": "35rem",
 	};
 	const Async = {
-		tetDecoration: "none",
+		textDecoration: "none",
 		fontWeight: "bold",
 		fontSize: "xx-large",
 		color: "#6c757d",
 	};
-	const textContent = {
-		// color: "white",
-		color: "black",
-		flex: 1,
-		// marginRight: "15rem",
-		marginLeft: "10rem",
+	const handleClick = () => {
+		const btnid = document.getElementById("submit");
+		btnid.addEventListener("click", () => {
+			alert("Your response has been recorded.");
+			console.log("Your response has been recorded.");
+		});
 	};
-	const Atags = {
-		textDecoration: "none",
-		color: "black",
-	};
-	const H3 = {
+	const para = {
 		fontWeight: "bold",
+		fontSize: "x-large",
+		fontFamily: "system-ui, -apple-system, BlinkMacSystem",
+		color: "#0b0c10",
 	};
-	const formLink = {
-		textDecoration: "none",
-		color: "black",
-		fontWeight: "bold",
-		fontSize: "larger",
+	const Btn = {
+		cursor: "pointer",
+		"margin-left": "2rem",
+		"margin-right": "2rem",
+		width: "20rem",
+		"background-color": "#6c757d",
+		border: "1rem solid #6c757d",
+		"border-radius": "1rem",
+		color: "#fff",
+		"font-weight": "bold",
+		"font-size": "larger",
 	};
-
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -89,74 +99,19 @@ export default function Contact() {
 					</ul>
 				</div>
 			</nav>
-			<br />
-
 			<div className="container" style={Box}>
-				<div className="text-content" style={textContent}>
-					<br />
-					<br />
-					<h1 style={H3}>Let's conncect</h1>
-					<br />
-					<br />
-					<h4>
-						<i className="fa-solid fa-envelope"></i>&ensp;Email
-					</h4>
-					<p>anvibhople@gmail.com</p>
-					<br />
+				<br />
+				<p style={para}>
+					Your response has been recorded. Your information will not be shared
+					with anybody.
+				</p>
 
-					<h4>
-						<i className="fa-solid fa-location-dot"></i>&ensp;Location
-					</h4>
-					<p>
-						<a
-							href="https://en.wikipedia.org/wiki/Maharashtra"
-							target="_blank"
-							style={Atags}
-							rel="noreferrer">
-							Maharashtra,
-						</a>{" "}
-						<a
-							href="https://en.wikipedia.org/wiki/India"
-							target="_blank"
-							style={Atags}
-							rel="noreferrer">
-							{" "}
-							India
-						</a>
-					</p>
-					<br />
-					<br />
-					<h3 style={H3}>My social media profiles</h3>
-					<br />
-
-					<h4>
-						<i className="fa-brands fa-github"></i>
-						<a href="https://github.com/AnviBhople" style={Atags}>
-							&ensp;Github
-						</a>
-					</h4>
-					<br />
-					<h4>
-						<i className="fa-brands fa-linkedin"></i>
-						<a
-							href="https://linkedin.com/in/anvi-bhople-a8431a27b"
-							style={Atags}>
-							&ensp;Linkedin
-						</a>
-					</h4>
-					<br />
-					<h4>
-						<i className="fa-brands fa-medium"></i>
-						<a href="https://medium.com/@anvibhople" style={Atags}>
-							&ensp;Medium
-						</a>
-					</h4>
-					<br />
-					<Link to="/form" style={formLink}>
-						Please fill out this form.
-					</Link>
-					<br />
+				<div>
+					<button onClick={handleClick} type="submit" id="submit" style={Btn}>
+						Done
+					</button>
 				</div>
+				<br />
 			</div>
 			<div className="footer">
 				<footer>

@@ -1,46 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Contact() {
+export default function Form() {
 	const Box = {
-		height: "45rem",
-		width: "40rem",
+		height: "50rem",
+		width: "35rem",
 		border: "2px solid black",
 		backgroundColor: "#adb5bd",
 		marginTop: "5rem",
 		marginBottom: "5rem",
 		marginLeft: "30rem",
-		marginRight: "15rem",
+		marginRight: "5rem",
 		boxShadow: "10px 10px #0b0c10",
 		borderRadius: "10%",
+		padding: "2rem",
 	};
 	const Async = {
-		tetDecoration: "none",
+		textDecoration: "none",
 		fontWeight: "bold",
 		fontSize: "xx-large",
 		color: "#6c757d",
 	};
-	const textContent = {
-		// color: "white",
-		color: "black",
-		flex: 1,
-		// marginRight: "15rem",
-		marginLeft: "10rem",
-	};
-	const Atags = {
-		textDecoration: "none",
-		color: "black",
-	};
-	const H3 = {
+	const Label = {
+		width: "18rem",
+		marginLeft: "3rem",
+		fontFamily: "system-ui, -apple-system, BlinkMacSystem",
+		fontSize: "larger",
 		fontWeight: "bold",
 	};
-	const formLink = {
-		textDecoration: "none",
-		color: "black",
+	const input = {
+		height: "2.5rem",
+		width: "20rem",
+		marginLeft: "3rem",
+		backgroundColor: "whitesmoke",
+		border: "2px solid #e7ecef",
+		borderRadius: "1rem",
+		paddingLeft: "1rem",
+	};
+	const h2 = {
+		textAlign: "center",
+		fontFamily: "system-ui, -apple-system, BlinkMacSystem",
+		marginLeft: "5rem",
+		color: "#0b0c10",
+		fontWeight: "bolder",
+	};
+	const Btn = {
+		marginLeft: "9rem",
+		height: "70px",
+		width: "190px",
+		borderRadius: "5%",
+		backgroundColor: "#6c757d",
+		color: "white",
+		border: "2px solid #6c757d",
 		fontWeight: "bold",
 		fontSize: "larger",
 	};
-
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -89,75 +103,59 @@ export default function Contact() {
 					</ul>
 				</div>
 			</nav>
-			<br />
 
 			<div className="container" style={Box}>
-				<div className="text-content" style={textContent}>
+				<form action="form submission">
+					<h2 style={h2}>Get in touch</h2>
+					<br />
+					<label htmlFor="visitorName" style={Label}>
+						Name
+					</label>
+					<br />
+					<input type="text" required style={input} />
 					<br />
 					<br />
-					<h1 style={H3}>Let's conncect</h1>
+					<br />
+					<label htmlFor="visitorEmail" style={Label}>
+						Email
+					</label>
+					<br />
+					<input type="email" required style={input} />
 					<br />
 					<br />
-					<h4>
-						<i className="fa-solid fa-envelope"></i>&ensp;Email
-					</h4>
-					<p>anvibhople@gmail.com</p>
 					<br />
-
-					<h4>
-						<i className="fa-solid fa-location-dot"></i>&ensp;Location
-					</h4>
-					<p>
-						<a
-							href="https://en.wikipedia.org/wiki/Maharashtra"
-							target="_blank"
-							style={Atags}
-							rel="noreferrer">
-							Maharashtra,
-						</a>{" "}
-						<a
-							href="https://en.wikipedia.org/wiki/India"
-							target="_blank"
-							style={Atags}
-							rel="noreferrer">
-							{" "}
-							India
-						</a>
-					</p>
+					<label htmlFor="reason" style={Label}>
+						Reason of Contact
+					</label>
+					<br />
+					<input type="text" required style={input} />
 					<br />
 					<br />
-					<h3 style={H3}>My social media profiles</h3>
 					<br />
-
-					<h4>
-						<i className="fa-brands fa-github"></i>
-						<a href="https://github.com/AnviBhople" style={Atags}>
-							&ensp;Github
-						</a>
-					</h4>
+					<label htmlFor="visitorPhoneno" style={Label}>
+						Phone Number
+					</label>
 					<br />
-					<h4>
-						<i className="fa-brands fa-linkedin"></i>
-						<a
-							href="https://linkedin.com/in/anvi-bhople-a8431a27b"
-							style={Atags}>
-							&ensp;Linkedin
-						</a>
-					</h4>
+					<input type="number" style={input} />
 					<br />
-					<h4>
-						<i className="fa-brands fa-medium"></i>
-						<a href="https://medium.com/@anvibhople" style={Atags}>
-							&ensp;Medium
-						</a>
-					</h4>
 					<br />
-					<Link to="/form" style={formLink}>
-						Please fill out this form.
+					<br />
+					<label htmlFor="knowMe" style={Label}>
+						How did you hear about me?
+					</label>
+					<br />
+					<input type="text" style={input} />
+					<br />
+					<br />
+					<br />
+					<Link to="/submit">
+						<button type="submit" style={Btn}>
+							Let's connect
+						</button>
 					</Link>
-					<br />
-				</div>
+				</form>
 			</div>
+
 			<div className="footer">
 				<footer>
 					<h3 className="footer-content">

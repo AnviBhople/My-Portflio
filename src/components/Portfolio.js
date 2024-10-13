@@ -2,182 +2,190 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Portfolio() {
-	const Async = {
-		tetDecoration: "none",
-		fontWeight: "bold",
-		fontSize: "xx-large",
-		color: "#6c757d",
-	};
-	const textContent = {
-		color: "black",
-		flex: 1,
-		marginLeft: "4rem",
-	};
-	const Atags = {
+	const navLinkStyle = {
 		textDecoration: "none",
 		color: "black",
+		transition:
+			"transform 0.4s ease, background-color 0.4s ease, border 0.4s ease",
 	};
-	const Box = {
-		height: "49rem",
-		width: "40rem",
-		border: "2px solid black",
+
+	const cardStyle = {
 		backgroundColor: "#adb5bd",
-		marginTop: "5rem",
-		marginBottom: "5rem",
-		marginLeft: "30rem",
-		marginRight: "15rem",
-		boxShadow: "10px 10px #0b0c10",
+		width: "15rem",
+		margin: "1rem",
+		padding: "1rem",
+		border: "2px solid black",
 		borderRadius: "10%",
-		paddingTop: "2rem",
+		boxShadow: "10px 10px #0b0c10",
+		transition:
+			"transform 0.4s ease, background-color 0.4s ease, border 0.4s ease",
 	};
-	const h1 = {
-		fontWeight: "bold",
+
+	const handleHoverEffect = (e) => {
+		e.currentTarget.style.backgroundColor = "#6c757d";
+		e.currentTarget.style.color = "#fff";
+		e.currentTarget.style.fontWeight = "bold";
+		e.currentTarget.style.padding = "20px";
+		e.currentTarget.style.transform = "scale(1.05)";
 	};
+
+	const removeHoverEffect = (e) => {
+		e.currentTarget.style.backgroundColor = "#adb5bd";
+		e.currentTarget.style.color = "black";
+		e.currentTarget.style.fontWeight = "normal";
+		e.currentTarget.style.padding = "1rem";
+		e.currentTarget.style.transform = "scale(1)";
+	};
+
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
 				<Link className="navbar-brand" to="/">
 					Home
 				</Link>
-				<button
-					className="navbar-toggler d-lg-none"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#collapsibleNavId"
-					aria-controls="collapsibleNavId"
-					aria-expanded="false"
-					aria-label="Toggle navigation"></button>
-				<div className="collapse navbar-collapse" id="collapsibleNavId">
-					<ul className="navbar-nav me-auto mt-2 mt-lg-0">
+				<div className="collapse navbar-collapse">
+					<ul className="navbar-nav me-auto">
 						<li className="nav-item">
-							<Link className="nav-link active" to="/about" aria-current="page">
+							<Link className="nav-link" to="/about">
 								About
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link
-								className="nav-link active"
-								to="/portfolio"
-								aria-current="page">
+							<Link className="nav-link" to="/portfolio">
 								Portfolio
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link
-								className="nav-link active"
-								to="/skills"
-								aria-current="page">
+							<Link className="nav-link" to="/skills">
 								Skills
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link
-								className="nav-link active"
-								to="/contact"
-								aria-current="page">
+							<Link className="nav-link" to="/contact">
 								Contact
 							</Link>
 						</li>
 					</ul>
 				</div>
 			</nav>
-			<div className="container" style={Box}>
-				<div className="text-content" style={textContent}>
-					<h1 style={h1}>My Portfolio</h1>
-					<br />
-					<div className="project">
-						<h3>Sign-Up App</h3>
-						<p>
-							A landing page where users can sign up, log in, reset passwords,
-							and sign up with Google. The app uses React.js and reCAPTCHA for
-							human verification.
-							<br />
-							<strong>Technologies:</strong> React, reCAPTCHA, CSS
-							<br />
-							<a
-								href="https://github.com/AnviBhople/Sign-Up"
-								target="_blank"
-								rel="noopener noreferrer"
-								style={Atags}>
-								View on GitHub
-							</a>
-						</p>
-					</div>
-					<div className="project">
-						<h3>SyncSpace</h3>
-						<p>
-							SyncSpace is a work, space and time management web application. It
-							minimizes the clutter upto 65% and helps you manaze your time and
-							work efficiently.
-							<br />
-							<strong>Technologies:</strong> React, reCAPTCHA, CSS
-							<br />
-							<a
-								href="https://github.com/AnviBhople/SyncSpace"
-								target="_blank"
-								rel="noopener noreferrer"
-								style={Atags}>
-								View on GitHub
-							</a>
-						</p>
-					</div>
-					<div className="project">
-						<h3>Food Store</h3>
-						<p>
-							Food Store is an online food ordering platform. Here you can find
-							various food options from different restraunts. Enjoy!
-							<br />
-							<strong>Technologies:</strong> HTML, CSS and JavaScript
-							<br />
-							<a
-								href="https://github.com/AnviBhople/Food-Store"
-								target="_blank"
-								rel="noopener noreferrer"
-								style={Atags}>
-								View on GitHub
-							</a>
-						</p>
-					</div>
-					<div className="project">
-						<h3>Rock Paper Scissors</h3>
-						<p>
-							Rock-Paper-Scissors is a game desgined to play alongside computer.
-							Have fun and enjoy!
-							<br />
-							<strong>Technologies:</strong> HTML, CSS and JavaScript
-							<br />
-							<a
-								href="https://github.com/AnviBhople/Rock-Paper-Scissors"
-								target="_blank"
-								rel="noopener noreferrer"
-								style={Atags}>
-								View on GitHub
-							</a>
-						</p>
-					</div>
+
+			<h1
+				className="text-center mt-5"
+				style={{ fontWeight: "bold", color: "white" }}>
+				My Portfolio
+			</h1>
+
+			<div className="container d-flex flex-wrap justify-content-center mt-5 mb-5">
+				<div
+					className="project-card"
+					style={cardStyle}
+					onMouseOver={handleHoverEffect}
+					onMouseOut={removeHoverEffect}>
+					<h3>Sign-Up App</h3>
+					<p>
+						A landing page where users can sign up, log in, reset passwords, and
+						sign up with Google.
+						<br />
+						<strong>Technologies:</strong> React, reCAPTCHA, CSS
+						<br />
+						<a
+							href="https://github.com/AnviBhople/Sign-Up"
+							target="_blank"
+							rel="noopener noreferrer"
+							style={navLinkStyle}>
+							View on GitHub
+						</a>
+					</p>
+				</div>
+
+				<div
+					className="project-card"
+					style={cardStyle}
+					onMouseOver={handleHoverEffect}
+					onMouseOut={removeHoverEffect}>
+					<h3>SyncSpace</h3>
+					<p>
+						SyncSpace is a work, space, and time management web app.
+						<br />
+						<strong>Technologies:</strong> React, reCAPTCHA, CSS
+						<br />
+						<a
+							href="https://github.com/AnviBhople/SyncSpace"
+							target="_blank"
+							rel="noopener noreferrer"
+							style={navLinkStyle}>
+							View on GitHub
+						</a>
+					</p>
+				</div>
+
+				<div
+					className="project-card"
+					style={cardStyle}
+					onMouseOver={handleHoverEffect}
+					onMouseOut={removeHoverEffect}>
+					<h3>Food Store</h3>
+					<p>
+						An online food ordering platform for browsing restaurant options.
+						<br />
+						<strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js
+						<br />
+						<a
+							href="https://github.com/AnviBhople/Food-Store"
+							target="_blank"
+							rel="noopener noreferrer"
+							style={navLinkStyle}>
+							View on GitHub
+						</a>
+					</p>
+				</div>
+
+				<div
+					className="project-card"
+					style={cardStyle}
+					onMouseOver={handleHoverEffect}
+					onMouseOut={removeHoverEffect}>
+					<h3>Rock Paper Scissors</h3>
+					<p>
+						A fun game designed for users to play against the computer.
+						<br />
+						<strong>Technologies:</strong> HTML, CSS, JavaScript
+						<br />
+						<a
+							href="https://github.com/AnviBhople/Rock-Paper-Scissors"
+							target="_blank"
+							rel="noopener noreferrer"
+							style={navLinkStyle}>
+							View on GitHub
+						</a>
+					</p>
 				</div>
 			</div>
-			<div className="footer">
-				<footer>
-					<h3 className="footer-content">
-						With ❤️ from &ensp;
-						<Link to="/" className="async" style={Async}>
-							Anvi
-						</Link>
-					</h3>
-					<div className="connect">
-						<p className="para-connect">Connect with me</p>
-						<Link to="/github" className="connect-links">
-							Github &ensp;
-						</Link>
-						<Link to="/linkedin" className="connect-links">
-							LinkedIn&ensp;
-						</Link>
 
-						<br />
-					</div>
-				</footer>
-			</div>
+			<footer className="footer">
+				<h3>
+					With ❤️ from&ensp;
+					<a href="/" style={{ textDecoration: "none", color: "#6c757d" }}>
+						Anvi
+					</a>
+				</h3>
+				<div className="connect">
+					<p>Connect with me</p>
+					<a href="https://github.com/AnviBhople" style={navLinkStyle}>
+						GitHub
+					</a>
+					&ensp;
+					<a
+						href="https://linkedin.com/in/anvi-bhople-a8431a27b"
+						style={navLinkStyle}>
+						LinkedIn
+					</a>
+					&ensp;
+					<a href="https://medium.com/@anvibhople" style={navLinkStyle}>
+						Medium
+					</a>
+				</div>
+			</footer>
 		</>
 	);
 }

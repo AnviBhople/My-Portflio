@@ -2,10 +2,11 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import About from "./components/About";
-import myImg from "./components/myImg.jpg";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
+import Form from "./components/Form";
+import Submit from "./components/Submit";
 
 function Main() {
 	const Box = {
@@ -74,16 +75,33 @@ function Main() {
 			<br />
 			<div className="container">
 				<div className="my-img">
-					<img src={myImg} className="myImg" alt="" />
+					<div>
+						<h1 className="myImg">
+							Hi,
+							<br /> I'm Anvi
+						</h1>
+					</div>
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<Link to="/contact">
+						<button className="contact-btn">Let's connect!</button>
+					</Link>
+					<br />
+					<br />
+					<Link to="/about">
+						<button className="about-btn">Learn More</button>
+					</Link>
 				</div>
 				<br />
 				<br />
 				<br />
 				<div className="text-content" style={Box}>
 					<br />
-
-					<h1>Hi, I'm Anvi.</h1>
-
+					<br />
 					<p>
 						Hello! I’m Anvi Bhople, a passionate front-end developer hailing
 						from India. With a deep-seated enthusiasm for technology, I
@@ -105,10 +123,10 @@ function Main() {
 						trends, experimenting with new tools and brainstorming ideas for
 						future projects. Feel free to explore my portfolio and connect with
 						me to see how we can collaborate or discuss the latest in tech!
-						<br />
 					</p>
 				</div>
 			</div>
+
 			<br />
 			<br />
 			<br />
@@ -154,6 +172,8 @@ function App() {
 					<Route path="/skills" element={<Skills />}></Route>
 					<Route path="/portfolio" element={<Portfolio />}></Route>
 					<Route path="/contact" element={<Contact />}></Route>
+					<Route path="/form" element={<Form />}></Route>
+					<Route path="/submit" element={<Submit />}></Route>
 				</Routes>
 			</Router>
 		</>
